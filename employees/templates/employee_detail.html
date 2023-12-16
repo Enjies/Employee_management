@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Detail</title>
+</head>
+<body>
+    <h2>Employee Detail</h2>
+    {% if employee %}
+        <!-- Виведення деталей співробітника, якщо об'єкт employee існує -->
+        <p>ID: {{ employee.employee_id }}</p>
+        <p>Name: {{ employee.full_name }}</p>
+        <p>Email: {{ employee.email }}</p>
+        <p>Phone Number: {{ employee.phone_number }}</p>
+        <p>Address: {{ employee.address }}</p>
+        <p>Passport Data: {{ employee.passport_data }}</p>
+        <p>Marital Status: {{ employee.get_marital_status_display }}</p>
+        <p>Working Hours per Month: {{ employee.working_hours_per_month }}</p>
+        <p>Position: {{ employee.position }}</p>
+        <p>Salary: {{ employee.salary }}</p>
+        <!-- Виведення повідомлення, якщо співробітник не знайдений -->
+        <p>No employee found with the provided ID.</p>
+    {% endif %}
+</body>
+</html>

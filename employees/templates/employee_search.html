@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Search</title>
+</head>
+<body>
+    <h2>Employee Search</h2>
+
+    <!-- Форма для пошуку співробітника за ідентифікатором -->
+    <form method="post" action="{% url 'employee_search' %}">
+        {% csrf_token %}
+        <label for="employee_id">Employee ID:</label>
+        <input type="text" name="employee_id" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Виведення повідомлення про помилку, якщо воно існує -->
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
